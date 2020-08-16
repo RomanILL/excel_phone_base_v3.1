@@ -2,10 +2,13 @@ import os
 from glob import glob
 import func_xlsx_base
 from make_phone_func import make_good_phone_list
+import find_address_base
 
 if __name__ == "__main__":
 
     # блок констант
+    version = 3.1
+
     global_count = 0
     COUNTRY_SELECT = ["Россия"]
     exit_phone_base_file_name = "Томская-Кемеровская.xlsx"

@@ -2,7 +2,7 @@ import openpyxl  # открывать xlsx файлы
 import os
 
 
-def create_write_file(w_filename, name_first_sheet="Лист 1"):
+def create_write_file(w_filename, name_first_sheet="Лист1"):
     """ функция создания файла записи xlsx
     возвращает объект нового файла"""
     temp_file_name = w_filename.split("\\")[-1]
