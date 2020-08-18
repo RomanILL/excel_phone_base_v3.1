@@ -2,6 +2,7 @@ import openpyxl  # открывать xlsx файлы
 import os
 
 
+
 def create_write_file(w_filename, name_first_sheet="Лист1"):
     """ функция создания файла записи xlsx
     возвращает объект нового файла"""
@@ -14,10 +15,7 @@ def create_write_file(w_filename, name_first_sheet="Лист1"):
     return exit_file
 
 
-def check_destination_folders(folders_list):
-    for folder in folders_list:
-        print(check_and_create_dir(folder))
-    print("-" * 30 + "\n")
+
 
 
 def make_cities_dict(file_name, country_select_list):
@@ -114,3 +112,13 @@ def get_heads(xlsx_object, sheet_number=0, start_row=1, ignore_id_list=tuple()):
 def most_frequent(any_list):
     """ для поиска наиболее частого элемента в списке"""
     return max(set(any_list), key = any_list.count)
+
+
+def region_on_number_vehicle(vehicle_list):
+    # определяем регион по номеру машины
+    temp_region_list = []
+    for tmp_vehicle in vehicle_list:
+        temp_region_list.append(tmp_vehicle.split('-')[-1])
+    region_num = most_frequent(temp_region_list)
+    # print(region)
+    return region_num
